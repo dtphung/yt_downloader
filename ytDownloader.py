@@ -1,14 +1,19 @@
 from pytube import YouTube
-from sys import argv
 
-link = argv[1]
-yt = YouTube(link)
+# Replace the video URL with the URL of the video you want to download
+ 
+video_url= input("Pleas enter YouTube URL: ")
 
-print("Title: ", yt.title)
+# Create a YouTube object
+yt = YouTube(video_url,use_oauth=True, allow_oauth_cache=True)
 
-print("View: ", yt.views)
+# Select the highest resolution stream
+stream = yt.streams.get_highest_resolution()
 
-yd = yt.streams.get_highest_resolution()
+# Define the file path for the downloaded video
+file_path = 'C:\\Users\\Tai\\Downloads'
 
-# ADD FOLDER HERE
-yd.download('./YTfolder')
+# Download the video to the specified file path
+stream.download(file_path)
+
+print("------------------ done --------------------")
