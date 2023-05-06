@@ -13,14 +13,12 @@ This is a command-line tool for downloading YouTube videos using Pytube.
 
 ## Usage
 
+Replace file_path with your download file location
 Run the script by executing the `ytDownloader.py` file with Python in the command-line:
-Replace file_path with your file location
+python .\ytDownloader.py
+
 
 ### Options
 
 - `-f, --format`: Specify the format of the video to download. Available formats are: `mp4`, `webm`, `3gp`.
-- `-o, --output`: Specify the name of the output file.
-
-Example usage:
-
-This will download the video in MP4 format and save it as `myvideo.mp4` in the current directory.
+- `-o, --output`: Specify the name of the output file
