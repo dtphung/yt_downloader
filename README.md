@@ -21,4 +21,4 @@ python .\ytDownloader.py
 2. Choose Path
 3. Click on Download
 
-![image](https://user-images.githubusercontent.com/76885700/236652712-d6255246-f88f-485e-b781-02156a2a8f30.png)
+![image](https://user-images.githubusercontent.com/76885700/236682792-d23b4dd7-3625-427b-8631-4dd36f161c22.png)
