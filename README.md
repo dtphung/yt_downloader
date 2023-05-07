@@ -13,8 +13,8 @@ This is a command-line tool for downloading YouTube videos using Pytube.
 
 ## Usage
 
-Run the script by executing the `YT_Downloader.py` file with Python in the command-line:
-python .\YT_Downloader.py
+Run the script by executing the `YT_Downloader.py` file with Python in the command-line:\
+<code>python .\YT_Downloader.py</code>
 
 1. Enter URL
 2. Choose Path
