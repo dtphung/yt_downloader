@@ -56,7 +56,7 @@ def show_progress(stream, chunk, bytes_remaining):
 root = Tk()
 root.title("YouTube Video Downloader")
 root.geometry("400x200") # set the window size to 400x200 pixels
-root.iconbitmap("./youtube.ico")
+root.iconbitmap("./youtube_icon.ico")
 
 
 # Create the input field for the video URL
