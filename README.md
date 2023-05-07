@@ -18,8 +18,8 @@ Run the script by executing the `YT_Downloader.py` file with Python in the comma
 
 1. Enter URL
 2. Choose Path
-3. Click on Download
-4. Choose mp4 or mp3
+3. Choose mp4 or mp3
+4. Click on Download
 
 ![image](https://user-images.githubusercontent.com/76885700/236682792-d23b4dd7-3625-427b-8631-4dd36f161c22.png)
 
