@@ -22,3 +22,7 @@ python .\YT_Downloader.py
 4. Choose mp4 or mp3
 
 ![image](https://user-images.githubusercontent.com/76885700/236682792-d23b4dd7-3625-427b-8631-4dd36f161c22.png)
+
+## License
+
+This project is licensed under the [MIT License](LICENSE.md).

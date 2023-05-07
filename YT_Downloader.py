@@ -37,7 +37,7 @@ def download_video():
 
     # Check if the download directory exists
     if not os.path.isdir(download_dir):
-        status_label.config(text="Invalid download directory. Please select a valid directory.")
+        status_label.config(text="Invalid directory. Please select a valid directory.")
         return
 
     # Define the file path for the downloaded video
