@@ -21,7 +21,12 @@ def download_video():
         return
 
     # Select the highest resolution stream
-    stream = yt.streams.get_highest_resolution()
+    if download_option.get() == 1:
+        stream = yt.streams.get_highest_resolution()
+        extension = ".mp4"
+    else:
+        stream = yt.streams.filter(only_audio=True).first()
+        extension = ".mp3"
 
     # Get the download directory from the text field
     download_dir = download_dir_entry.get()
@@ -36,10 +41,10 @@ def download_video():
         return
 
     # Define the file path for the downloaded video
-    file_path = download_dir + "/" + yt.title + ".mp4"
+    file_path = download_dir + "/" + yt.title + extension
 
     # Download the video to the specified file path
-    stream.download(output_path=download_dir, filename=yt.title + ".mp4")
+    stream.download(output_path=download_dir, filename=yt.title + extension)
 
     # Update the status label
     status_label.config(text="Video downloaded successfully!")
@@ -55,8 +60,10 @@ def show_progress(stream, chunk, bytes_remaining):
 # Create the main window
 root = Tk()
 root.title("YouTube Video Downloader")
-root.geometry("400x200") # set the window size to 400x200 pixels
+root.geometry("400x250") # set the window size to 400x250 pixels
 
+# Create a variable to store the download option
+download_option = IntVar()
 
 # Create the input field for the video URL
 url_label = Label(root, text="Enter YouTube URL:")
@@ -71,8 +78,16 @@ download_dir_label = Label(download_dir_frame, text="Download directory:")
 download_dir_label.pack(side=TOP)
 download_dir_entry = Entry(download_dir_frame, width=40)
 download_dir_entry.pack(side=LEFT)
-browse_button = Button(download_dir_frame, text="Browse", command=lambda: download_dir_entry.insert(END, askdirectory()))
+browse_button = Button(download_dir_frame, text="Browse", command=lambda: (download_dir_entry.delete(0, END), download_dir_entry.insert(END, askdirectory())))
 browse_button.pack(side=LEFT)
+
+# Create radio buttons for download options
+download_option_frame = Frame(root)
+download_option_frame.pack(pady=10)
+mp4_radio_button = Radiobutton(download_option_frame, text=".mp4", variable=download_option, value=1)
+mp4_radio_button.pack(side=LEFT)
+mp3_radio_button = Radiobutton(download_option_frame, text=".mp3", variable=download_option, value=2)
+mp3_radio_button.pack(side=LEFT)
 
 # Create the download button
 download_button = Button(root, text="Download", command=download_video)
