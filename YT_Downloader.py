@@ -56,6 +56,8 @@ def show_progress(stream, chunk, bytes_remaining):
 root = Tk()
 root.title("YouTube Video Downloader")
 root.geometry("400x200") # set the window size to 400x200 pixels
+root.iconbitmap("./youtube.ico")
+
 
 # Create the input field for the video URL
 url_label = Label(root, text="Enter YouTube URL:")
@@ -78,7 +80,7 @@ download_button = Button(root, text="Download", command=download_video)
 download_button.pack()
 
 # Create the progress bar
-progress_bar = Progressbar(root, orient=HORIZONTAL, length=200, mode='determinate')
+progress_bar = Progressbar(root, orient=HORIZONTAL, length=300, mode='determinate')
 progress_bar.pack(pady=10)
 
 # Create the status label
