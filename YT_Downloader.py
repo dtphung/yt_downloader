@@ -47,7 +47,7 @@ def download_video():
     stream.download(output_path=download_dir, filename=yt.title + extension)
 
     # Update the status label
-    status_label.config(text="Video downloaded successfully!")
+    status_label.config(text="Downloaded successfully!")
 
 # Define a function to show the download progress
 def show_progress(stream, chunk, bytes_remaining):
@@ -59,7 +59,7 @@ def show_progress(stream, chunk, bytes_remaining):
 
 # Create the main window
 root = Tk()
-root.title("YouTube Video Downloader")
+root.title("YouTube Downloader")
 root.geometry("400x250") # set the window size to 400x250 pixels
 
 # Create a variable to store the download option
