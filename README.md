@@ -1,6 +1,6 @@
 # YouTube Downloader with Pytube
 
-This is a command-line tool for downloading YouTube videos using Pytube.
+This is a GUI tool for downloading YouTube videos using Pytube.
 
 ## Requirements
 
