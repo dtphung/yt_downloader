@@ -42,13 +42,6 @@ def download_video():
         status_label.config(text="Error: " + str(e))
         return
 
-    # Select the highest resolution stream
-    if download_option.get() == 1:
-        stream = yt.streams.get_highest_resolution()
-        extension = ".mp4"
-    else:
-        stream = yt.streams.filter(only_audio=True).first()
-        extension = ".mp3"
 
     # Get the download directory from the text field
     download_dir = download_dir_entry.get()
@@ -61,6 +54,18 @@ def download_video():
     if not os.path.isdir(download_dir):
         status_label.config(text="Invalid directory. Please select a valid directory.")
         return
+    
+    # Select the highest resolution stream
+    if download_option.get() == 1:
+        stream = yt.streams.get_highest_resolution()
+        extension = ".mp4"
+    elif download_option.get() == 2:
+        stream = yt.streams.filter(only_audio=True).first()
+        extension = ".mp3"
+    else:
+        status_label.config(text="Invalid download option. Please select either .mp4 or .mp3.")
+        return
+    
 
     # Define the file path for the downloaded video
     file_path = download_dir + "/" + yt.title + extension
